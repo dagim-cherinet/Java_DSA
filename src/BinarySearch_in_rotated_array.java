@@ -7,11 +7,11 @@ public class BinarySearch_in_rotated_array {
         if(pivot != -1){
             int searchLeft = binarySearch(arr, 0, pivot, target);
             if(searchLeft != -1)
-            System.out.println("the " + target + " is fount at index :- " + searchLeft);
+            System.out.println("the target " + target + " is fount at index :- " + searchLeft);
             else {
                 int searchRight = binarySearch(arr, pivot +1, arr.length, target);
                 if(searchRight != -1){
-                System.out.println("the " + target + " is fount at index :- " + searchRight);
+                System.out.println("the target " + target + " is fount at index :- " + searchRight);
                 }
                 else {
                     System.out.println("the target " + target + " is not found in the array");
