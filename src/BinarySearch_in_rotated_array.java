@@ -1,25 +1,27 @@
 public class BinarySearch_in_rotated_array {
     public static void main(String[] args) {
-        int[] arr = {19,20,21,22,25,0,5,10,15,17};
+        int[] nums = {19,20,21,22,25,0,5,10,15,17};
         int target = 17;
-        int pivot = pivotIndex(arr);
-        System.out.println(pivot);
-        if(pivot != -1){
-            int searchLeft = binarySearch(arr, 0, pivot, target);
-            if(searchLeft != -1)
-            System.out.println("the " + target + " is found at index :- " + searchLeft);
-            else {
-                int searchRight = binarySearch(arr, pivot +1, arr.length, target);
-                if(searchRight != -1){
-                System.out.println("the " + target + " is found at index :- " + searchRight);
-                }
-                else {
-                    System.out.println("the target " + target + " is not found in the array");
-                }
-            }
-        }
+        int pivot = pivotIndex(nums);
+        // System.out.println(pivot);
 
+        if(pivot == -1) System.out.println(binarySearch(nums, 0, nums.length -1, target));
+
+        if(target == nums[pivot]) System.out.println(pivot);
+
+        if(target >= nums[0])
+        {  // the target is definetly left side of the pivot
+            System.out.println(binarySearch(nums, 0, pivot, target));
+        }
+        //  if(target < nums[0]){
+        // the target is definetly right side of the pivot where small values are  present
+        //    return binarySearch(nums, pivot + 1, nums.length-1, target);
+        //  }
+
+        System.out.println(binarySearch(nums, pivot + 1, nums.length-1, target));
+        //  return -1;
     }
+    //this will not work in duplicated values with in an array
     public static int pivotIndex(int[] nums){
         int start = 0;
         int end = nums.length -1;
