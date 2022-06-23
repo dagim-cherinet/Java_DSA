@@ -1,10 +1,10 @@
 public class BinarySearch_in_rotated_array {
     public static void main(String[] args) {
         int[] nums = {19,20,21,22,25,0,5,10,15,17};
-        int target = 17;
+        int target = 5;
         int pivot = pivotIndex(nums);
         // System.out.println(pivot);
-
+System.out.println("the pivot is at index: " + pivot);
         if(pivot == -1) System.out.println(binarySearch(nums, 0, nums.length -1, target));
 
         if(target == nums[pivot]) System.out.println(pivot);
@@ -32,20 +32,19 @@ public class BinarySearch_in_rotated_array {
            // System.out.println(mid);
            // System.out.println(nums[mid]);
 
-            if(nums[mid] > nums[mid + 1]){
+            if(mid < end && nums[mid] > nums[mid + 1]){
                // System.out.println(mid);
                 return mid;
             }
-            else if(nums[mid]< nums[mid - 1]){
+            else if(mid > start && nums[mid]< nums[mid - 1]){
                return  mid -1;
             }
-            else if(nums[mid] < nums[mid + 1]){
-                if(nums[mid] > nums[end]){
+
+            if(nums[mid] > nums[start]){
                     start = mid + 1;
-                }
-                else if (nums[mid]< nums[end]){
+            }
+            else if (nums[mid]< nums[start]){
                     end = mid -1;
-                }
             }
 
         }
