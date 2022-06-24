@@ -31,6 +31,7 @@ public class BinarySearchIn_2D_Array {
                         inner_end = inner_mid -1;
                     }
                 }
+                return new int[] {-1, -1};
             }
         }
         return  new int[] {-1,-1};
