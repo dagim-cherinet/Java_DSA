@@ -4,8 +4,11 @@ public class Rotation_count_of_rotated_sorted_array {
             int target = 5;
             int pivot = pivotIndex(nums);
             // System.out.println(pivot);
-            System.out.println("the pivot is at index: " + pivot);
-          System.out.println("The sorted array is rotated " + (pivot + 1) + " times from the original array");
+            if(pivot == -1) System.out.println("the array is not rotated");
+            else {
+                System.out.println("the pivot is at index: " + pivot);
+                System.out.println("The sorted array is rotated " + (pivot + 1) + " times from the original array");
+            }
         }
         //this will not work in duplicated values with in an array
         public static int pivotIndex(int[] nums){
