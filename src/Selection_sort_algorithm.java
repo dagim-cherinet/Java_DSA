@@ -12,7 +12,7 @@ public class Selection_sort_algorithm {
         for (int i = 0; i < arr.length ; i++) {
             int maxIndex = 0;
             int temp;
-
+//the inner for-loop used to search the max with in the sub-array
             for (int j = 0; j < arr.length - i; j++) {
                 int max = arr[0];
                 if(arr[j] >= max){
