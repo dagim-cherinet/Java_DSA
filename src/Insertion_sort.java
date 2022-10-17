@@ -17,7 +17,6 @@ public class Insertion_sort {
                 else {
                     break;
                 }
-
             }
         }
     }

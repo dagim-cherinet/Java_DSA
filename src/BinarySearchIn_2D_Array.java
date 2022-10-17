@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class BinarySearchIn_2D_Array {
     public static void main(String[] args){
         int [][] array = {{0,1,2,3}, {5,7,9,10,11},{12,14,15,16,17},{22,23,25,26,27}};
-        int target = 8;
+        int target = 12;
         System.out.println(Arrays.toString(binaryIn_2D_array(array,target)));
     }
 
@@ -22,8 +22,7 @@ public class BinarySearchIn_2D_Array {
             if(target >= arr[mid][0] && target <= arr[mid][arr[mid].length -1]){
                 //this implies the target is inside this particular row so perform binary search
                int column_index = binarySearch(arr[mid], target);
-               if(column_index != -1)
-               return new int[] {mid, column_index};
+               if(column_index != -1) return new int[] {mid, column_index};
                return new int[] {-1, -1};
             }
         }
